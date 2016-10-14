@@ -1,9 +1,7 @@
 #!/usr/bin/python
 import numpy as np
 import cv2
-from matplotlib import pyplot as plt
-import os 
-from Tkinter import *
+import os
 from PIL import Image, ImageStat
 import math
 import argparse
@@ -38,13 +36,8 @@ class PhotoEditor:
         img2 = cv2.GaussianBlur(gray,(3,3),0)
         #laplacian detects the edges
         laplacian = cv2.Laplacian(img2,cv2.CV_64F,ksize=1,scale=0.02,delta=0)
-        sobel = cv2.Sobel(img2,cv2.CV_64F,1,1,ksize=1,scale = 0.02,delta=0)
         #adds laplacian and mask you get edges on people's face
         finalMask = cv2.bitwise_and(laplacian,laplacian,mask=mask)
-        finalMask2 = cv2.bitwise_and(sobel,sobel,mask=mask)
-        #img2gray = cv2.cvtColor(finalMask2,cv2.COLOR_HSV2BGR)
-        #newMask = cv2.threshold(finalMask2, 10, 255, cv2.THRESH_BINARY)
-        #appliedMask = cv2.bitwise_and(img,img,mask=finalMask)
         #makes a new mask according to finalMask
         for i in range(0,len(finalMask)):
             for j in range(0,len(finalMask[0])):
@@ -64,6 +57,7 @@ class PhotoEditor:
         cv2.imwrite(fileName, img)
 
     def pimpleRemoval(self,mask,img):
+        # blurs out the image
         image = cv2.medianBlur(img, 17)
         img1 = cv2.bitwise_and(image,image,mask=mask)
         img2 = cv2.bitwise_and(img,img,mask=mask)
@@ -81,6 +75,7 @@ class PhotoEditor:
         return cv2.LUT(image, table)
 
     def contrast_adjustment(self,image,constant):
+        # similar to adjust_gamma
         table1 = np.array([0.5**(1-constant)*(i/255.0)**constant*255 for i in np.arange(0,128)]).astype("uint8")
         table2 = np.array([-0.5**(1-constant)*(1-i/255.0)**constant*255+255 for i in np.arange(128,256)]).astype("uint8")
         table = np.append(table1,table2)
@@ -94,12 +89,6 @@ class PhotoEditor:
             print(currentBright)
             targetDiff = self.brightness-currentBright
             adjust_constant = (targetDiff)*0.01+1
-            #cv2_im = cv2.cvtColor(result,cv2.COLOR_BGR2RGB)
-            #pil_im = Image.fromarray(cv2_im)
-            #gs = (math.sqrt(0.241*(r**2) + 0.691*(g**2) + 0.068*(b**2))for r,g,b in pil_im.getdata())
-            #gslist = list(gs)
-            #diff = float(max(gslist)-min(gslist))
-            #adjust_constant = adjust_constant+(diff-100)/400
             print("adjust_constant")
             print(adjust_constant)
             result = self.adjust_gamma(result,adjust_constant)

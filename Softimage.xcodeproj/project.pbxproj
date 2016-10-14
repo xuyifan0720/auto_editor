@@ -1,0 +1,470 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		93294A511DAC9269001C8923 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93294A501DAC9269001C8923 /* AppDelegate.swift */; };
+		93294A531DAC9269001C8923 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93294A521DAC9269001C8923 /* ViewController.swift */; };
+		93294A551DAC9269001C8923 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93294A541DAC9269001C8923 /* Assets.xcassets */; };
+		93294A581DAC9269001C8923 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93294A561DAC9269001C8923 /* Main.storyboard */; };
+		93294A631DAC9269001C8923 /* SoftimageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93294A621DAC9269001C8923 /* SoftimageTests.swift */; };
+		93294A701DAD48F7001C8923 /* OpenCV.mm in Sources */ = {isa = PBXBuildFile; fileRef = 93294A6F1DAD48F7001C8923 /* OpenCV.mm */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		93294A5F1DAC9269001C8923 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 93294A451DAC9269001C8923 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 93294A4C1DAC9269001C8923;
+			remoteInfo = Softimage;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		93294A4D1DAC9269001C8923 /* Softimage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Softimage.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		93294A501DAC9269001C8923 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		93294A521DAC9269001C8923 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		93294A541DAC9269001C8923 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		93294A571DAC9269001C8923 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		93294A591DAC9269001C8923 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93294A5E1DAC9269001C8923 /* SoftimageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SoftimageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		93294A621DAC9269001C8923 /* SoftimageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoftimageTests.swift; sourceTree = "<group>"; };
+		93294A641DAC9269001C8923 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93294A6D1DAD48F6001C8923 /* Softimage-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Softimage-Bridging-Header.h"; sourceTree = "<group>"; };
+		93294A6E1DAD48F7001C8923 /* OpenCV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenCV.h; sourceTree = "<group>"; };
+		93294A6F1DAD48F7001C8923 /* OpenCV.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCV.mm; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		93294A4A1DAC9269001C8923 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93294A5B1DAC9269001C8923 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		93294A441DAC9269001C8923 = {
+			isa = PBXGroup;
+			children = (
+				93294A4F1DAC9269001C8923 /* Softimage */,
+				93294A611DAC9269001C8923 /* SoftimageTests */,
+				93294A4E1DAC9269001C8923 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		93294A4E1DAC9269001C8923 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				93294A4D1DAC9269001C8923 /* Softimage.app */,
+				93294A5E1DAC9269001C8923 /* SoftimageTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		93294A4F1DAC9269001C8923 /* Softimage */ = {
+			isa = PBXGroup;
+			children = (
+				93294A6E1DAD48F7001C8923 /* OpenCV.h */,
+				93294A6F1DAD48F7001C8923 /* OpenCV.mm */,
+				93294A501DAC9269001C8923 /* AppDelegate.swift */,
+				93294A521DAC9269001C8923 /* ViewController.swift */,
+				93294A541DAC9269001C8923 /* Assets.xcassets */,
+				93294A561DAC9269001C8923 /* Main.storyboard */,
+				93294A591DAC9269001C8923 /* Info.plist */,
+				93294A6D1DAD48F6001C8923 /* Softimage-Bridging-Header.h */,
+			);
+			path = Softimage;
+			sourceTree = "<group>";
+		};
+		93294A611DAC9269001C8923 /* SoftimageTests */ = {
+			isa = PBXGroup;
+			children = (
+				93294A621DAC9269001C8923 /* SoftimageTests.swift */,
+				93294A641DAC9269001C8923 /* Info.plist */,
+			);
+			path = SoftimageTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		93294A4C1DAC9269001C8923 /* Softimage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 93294A671DAC9269001C8923 /* Build configuration list for PBXNativeTarget "Softimage" */;
+			buildPhases = (
+				93294A491DAC9269001C8923 /* Sources */,
+				93294A4A1DAC9269001C8923 /* Frameworks */,
+				93294A4B1DAC9269001C8923 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Softimage;
+			productName = Softimage;
+			productReference = 93294A4D1DAC9269001C8923 /* Softimage.app */;
+			productType = "com.apple.product-type.application";
+		};
+		93294A5D1DAC9269001C8923 /* SoftimageTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 93294A6A1DAC9269001C8923 /* Build configuration list for PBXNativeTarget "SoftimageTests" */;
+			buildPhases = (
+				93294A5A1DAC9269001C8923 /* Sources */,
+				93294A5B1DAC9269001C8923 /* Frameworks */,
+				93294A5C1DAC9269001C8923 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				93294A601DAC9269001C8923 /* PBXTargetDependency */,
+			);
+			name = SoftimageTests;
+			productName = SoftimageTests;
+			productReference = 93294A5E1DAC9269001C8923 /* SoftimageTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		93294A451DAC9269001C8923 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "Desheng Xu";
+				TargetAttributes = {
+					93294A4C1DAC9269001C8923 = {
+						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
+					};
+					93294A5D1DAC9269001C8923 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 93294A4C1DAC9269001C8923;
+					};
+				};
+			};
+			buildConfigurationList = 93294A481DAC9269001C8923 /* Build configuration list for PBXProject "Softimage" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 93294A441DAC9269001C8923;
+			productRefGroup = 93294A4E1DAC9269001C8923 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				93294A4C1DAC9269001C8923 /* Softimage */,
+				93294A5D1DAC9269001C8923 /* SoftimageTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		93294A4B1DAC9269001C8923 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93294A551DAC9269001C8923 /* Assets.xcassets in Resources */,
+				93294A581DAC9269001C8923 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93294A5C1DAC9269001C8923 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		93294A491DAC9269001C8923 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93294A531DAC9269001C8923 /* ViewController.swift in Sources */,
+				93294A511DAC9269001C8923 /* AppDelegate.swift in Sources */,
+				93294A701DAD48F7001C8923 /* OpenCV.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93294A5A1DAC9269001C8923 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93294A631DAC9269001C8923 /* SoftimageTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		93294A601DAC9269001C8923 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 93294A4C1DAC9269001C8923 /* Softimage */;
+			targetProxy = 93294A5F1DAC9269001C8923 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		93294A561DAC9269001C8923 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				93294A571DAC9269001C8923 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		93294A651DAC9269001C8923 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				"HEADER_SEARCH_PATHS[arch=*]" = /usr/local/include;
+				"LIBRARY_SEARCH_PATHS[arch=*]" = /usr/local/lib;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				"OTHER_LDFLAGS[arch=*]" = (
+					"-lopencv_calib3d",
+					"-lopencv_contrib",
+					"-lopencv_core",
+					"-lopencv_features2d",
+					"-lopencv_flann",
+					"-lopencv_gpu",
+					"-lopencv_highgui",
+					"-lopencv_imgproc",
+					"-lopencv_legacy",
+					"-lopencv_ml",
+					"-lopencv_nonfree",
+					"-lopencv_objdetect",
+					"-lopencv_ocl",
+					"-lopencv_photo",
+					"-lopencv_stitching",
+					"-lopencv_superres",
+					"-lopencv_ts",
+					"-lopencv_video",
+					"-lopencv_videostab",
+				);
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		93294A661DAC9269001C8923 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				"HEADER_SEARCH_PATHS[arch=*]" = /usr/local/include;
+				"LIBRARY_SEARCH_PATHS[arch=*]" = /usr/local/lib;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				"OTHER_LDFLAGS[arch=*]" = (
+					"-lopencv_calib3d",
+					"-lopencv_contrib",
+					"-lopencv_core",
+					"-lopencv_features2d",
+					"-lopencv_flann",
+					"-lopencv_gpu",
+					"-lopencv_highgui",
+					"-lopencv_imgproc",
+					"-lopencv_legacy",
+					"-lopencv_ml",
+					"-lopencv_nonfree",
+					"-lopencv_objdetect",
+					"-lopencv_ocl",
+					"-lopencv_photo",
+					"-lopencv_stitching",
+					"-lopencv_superres",
+					"-lopencv_ts",
+					"-lopencv_video",
+					"-lopencv_videostab",
+				);
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		93294A681DAC9269001C8923 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Softimage/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xudesheng.Softimage;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Softimage/Softimage-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		93294A691DAC9269001C8923 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Softimage/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xudesheng.Softimage;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Softimage/Softimage-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		93294A6B1DAC9269001C8923 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SoftimageTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xudesheng.SoftimageTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Softimage.app/Contents/MacOS/Softimage";
+			};
+			name = Debug;
+		};
+		93294A6C1DAC9269001C8923 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SoftimageTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xudesheng.SoftimageTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Softimage.app/Contents/MacOS/Softimage";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		93294A481DAC9269001C8923 /* Build configuration list for PBXProject "Softimage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93294A651DAC9269001C8923 /* Debug */,
+				93294A661DAC9269001C8923 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		93294A671DAC9269001C8923 /* Build configuration list for PBXNativeTarget "Softimage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93294A681DAC9269001C8923 /* Debug */,
+				93294A691DAC9269001C8923 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		93294A6A1DAC9269001C8923 /* Build configuration list for PBXNativeTarget "SoftimageTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93294A6B1DAC9269001C8923 /* Debug */,
+				93294A6C1DAC9269001C8923 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 93294A451DAC9269001C8923 /* Project object */;
+}

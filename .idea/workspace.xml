@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aad5af52-bcba-4799-bb01-1bb0e48ede18" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/photo_editor.py" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Softimage.xcodeproj/project.xcworkspace/xcuserdata/YifanXu.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/Softimage.xcodeproj/project.xcworkspace/xcuserdata/YifanXu.xcuserdatad/UserInterfaceState.xcuserstate" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Softimage/AppDelegate.swift" afterPath="$PROJECT_DIR$/Softimage/AppDelegate.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Softimage/Base.lproj/Main.storyboard" afterPath="$PROJECT_DIR$/Softimage/Base.lproj/Main.storyboard" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Softimage/Info.plist" afterPath="$PROJECT_DIR$/Softimage/Info.plist" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Softimage/OpenCV.h" afterPath="$PROJECT_DIR$/Softimage/OpenCV.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Softimage/OpenCV.mm" afterPath="$PROJECT_DIR$/Softimage/OpenCV.mm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Softimage/ViewController.swift" afterPath="$PROJECT_DIR$/Softimage/ViewController.swift" />
     </list>
     <ignored path="auto_editor.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,8 +32,8 @@
       <file leaf-file-name="auto_editor.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/auto_editor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="37" column="77" selection-start-line="37" selection-start-column="77" selection-end-line="37" selection-end-column="77" />
+            <state relative-caret-position="-900">
+              <caret line="22" column="50" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
               <folding>
                 <element signature="e#18#36#0" expanded="true" />
               </folding>
@@ -68,6 +74,9 @@
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -120,8 +129,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/auto_editor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="37" column="77" selection-start-line="37" selection-start-column="77" selection-end-line="37" selection-end-column="77" />
+        <state relative-caret-position="-900">
+          <caret line="22" column="50" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
           <folding>
             <element signature="e#18#36#0" expanded="true" />
           </folding>

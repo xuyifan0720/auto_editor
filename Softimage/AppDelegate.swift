@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  Softimage
 //
-//  Created by Desheng Xu on 10/10/16.
-//  Copyright © 2016 Desheng Xu. All rights reserved.
+//  Created by Yifan Xu on 10/10/16.
+//  Copyright © 2016 Yifan Xu. All rights reserved.
 //
 
 import Cocoa

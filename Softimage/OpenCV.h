@@ -2,8 +2,8 @@
 //  OpenCV.h
 //  OpenCVSample_OSX
 //
-//  Created by Hiroki Ishiura on 2015/08/12.
-//  Copyright (c) 2015年 Hiroki Ishiura. All rights reserved.
+//
+//  
 //
 
 #import <Cocoa/Cocoa.h>
@@ -17,4 +17,5 @@
 + (NSImage *)cvtMedianBlur:(NSImage *)image size:(int)size;
 + (NSImage *)cvtInRange:(NSImage *)image rl:(int)rl gl:(int)gl bl:(int)bl rh:(int)rh gh:(int)gh bh:(int)bh;
 + (NSImage *)cvtGaussianBlur:(NSImage *)image xRange:(int)xRange yRange:(int)yRange;
++ (NSImage *)adjust: (NSImage *) image brightness:(int)brightness blemish:(bool)blemish;
 @end

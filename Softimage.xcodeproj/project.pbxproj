@@ -13,6 +13,9 @@
 		93294A581DAC9269001C8923 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93294A561DAC9269001C8923 /* Main.storyboard */; };
 		93294A631DAC9269001C8923 /* SoftimageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93294A621DAC9269001C8923 /* SoftimageTests.swift */; };
 		93294A701DAD48F7001C8923 /* OpenCV.mm in Sources */ = {isa = PBXBuildFile; fileRef = 93294A6F1DAD48F7001C8923 /* OpenCV.mm */; };
+		F64497901DC0169200557E95 /* libopencv_core.2.4.13.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F644978D1DC0169200557E95 /* libopencv_core.2.4.13.dylib */; };
+		F64497911DC0169200557E95 /* libopencv_highgui.2.4.13.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F644978E1DC0169200557E95 /* libopencv_highgui.2.4.13.dylib */; };
+		F64497921DC0169200557E95 /* libopencv_imgproc.2.4.13.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F644978F1DC0169200557E95 /* libopencv_imgproc.2.4.13.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +41,9 @@
 		93294A6D1DAD48F6001C8923 /* Softimage-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Softimage-Bridging-Header.h"; sourceTree = "<group>"; };
 		93294A6E1DAD48F7001C8923 /* OpenCV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenCV.h; sourceTree = "<group>"; };
 		93294A6F1DAD48F7001C8923 /* OpenCV.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCV.mm; sourceTree = "<group>"; };
+		F644978D1DC0169200557E95 /* libopencv_core.2.4.13.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_core.2.4.13.dylib; path = "../../../../Downloads/Softimage-master/libopencv_core.2.4.13.dylib"; sourceTree = "<group>"; };
+		F644978E1DC0169200557E95 /* libopencv_highgui.2.4.13.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_highgui.2.4.13.dylib; path = "../../../../Downloads/Softimage-master/libopencv_highgui.2.4.13.dylib"; sourceTree = "<group>"; };
+		F644978F1DC0169200557E95 /* libopencv_imgproc.2.4.13.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_imgproc.2.4.13.dylib; path = "../../../../Downloads/Softimage-master/libopencv_imgproc.2.4.13.dylib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +51,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F64497901DC0169200557E95 /* libopencv_core.2.4.13.dylib in Frameworks */,
+				F64497911DC0169200557E95 /* libopencv_highgui.2.4.13.dylib in Frameworks */,
+				F64497921DC0169200557E95 /* libopencv_imgproc.2.4.13.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +73,7 @@
 				93294A4F1DAC9269001C8923 /* Softimage */,
 				93294A611DAC9269001C8923 /* SoftimageTests */,
 				93294A4E1DAC9269001C8923 /* Products */,
+				F64497691DBEEC2900557E95 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,6 +110,16 @@
 			path = SoftimageTests;
 			sourceTree = "<group>";
 		};
+		F64497691DBEEC2900557E95 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F644978D1DC0169200557E95 /* libopencv_core.2.4.13.dylib */,
+				F644978E1DC0169200557E95 /* libopencv_highgui.2.4.13.dylib */,
+				F644978F1DC0169200557E95 /* libopencv_imgproc.2.4.13.dylib */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -110,6 +130,7 @@
 				93294A491DAC9269001C8923 /* Sources */,
 				93294A4A1DAC9269001C8923 /* Frameworks */,
 				93294A4B1DAC9269001C8923 /* Resources */,
+				F644978C1DC0167900557E95 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -197,6 +218,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F644978C1DC0167900557E95 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "echo \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks\"\nmkdir \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks\"\n\n\nexport FULLLIB=/usr/local/opt/opencv/lib/libopencv_contrib.2.4.dylib\nexport DYL=libopencv_contrib.2.4.dylib\ncp -f \"$FULLLIB\" \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks\"\ninstall_name_tool -change $FULLLIB @loader_path/../Frameworks/$DYL \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/MacOS/$PRODUCT_NAME\"\nexport DYL_CONTRIB=\"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks/$DYL\"\nchmod +wx $DYL_CONTRIB\n\nexport FULLLIB=/usr/local/lib/libopencv_nonfree.2.4.dylib\nexport DYL=libopencv_nonfree.2.4.dylib\ncp -f \"$FULLLIB\" \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks\"\ninstall_name_tool -change $FULLLIB @loader_path/../Frameworks/$DYL \"$DYL_CONTRIB\"\ninstall_name_tool -change /usr/local/opt/opencv/lib/$DYL @loader_path/../Frameworks/$DYL \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/MacOS/$PRODUCT_NAME\"\nexport DYL_NONFREE=\"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks/$DYL\"\nchmod +wx $DYL_NONFREE\n\nexport FULLLIB=/usr/local/lib/libopencv_gpu.2.4.dylib\nexport DYL=libopencv_gpu.2.4.dylib\ncp -f \"$FULLLIB\" \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks\"\ninstall_name_tool -change $FULLLIB @loader_path/../Frameworks/$DYL \"$DYL_NONFREE\"\ninstall_name_tool -change /usr/local/opt/opencv/lib/$DYL @loader_path/../Frameworks/$DYL \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/MacOS/$PRODUCT_NAME\"\nexport DYL_GPU=\"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks/$DYL\"\nchmod +wx $DYL_GPU\n\nexport FULLLIB=/usr/local/lib/libopencv_legacy.2.4.dylib\nexport DYL=libopencv_legacy.2.4.dylib\ncp -f \"$FULLLIB\" \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks\"\ninstall_name_tool -change $FULLLIB @loader_path/../Frameworks/$DYL \"$DYL_GPU\"\ninstall_name_tool -change /usr/local/opt/opencv/lib/$DYL @loader_path/../Frameworks/$DYL \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/MacOS/$PRODUCT_NAME\"\nexport DYL_LEGACY=\"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks/$DYL\"\nchmod +wx $DYL_LEGACY\n\nexport FULLLIB=/usr/local/lib/libopencv_photo.2.4.dylib\nexport DYL=libopencv_photo.2.4.dylib\ncp -f \"$FULLLIB\" \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks\"\ninstall_name_tool -change $FULLLIB @loader_path/../Frameworks/$DYL \"$DYL_LEGACY\"\ninstall_name_tool -change /usr/local/opt/opencv/lib/$DYL @loader_path/../Frameworks/$DYL \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/MacOS/$PRODUCT_NAME\"\nexport DYL_PHOTO=\"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks/$DYL\"\nchmod +wx $DYL_PHOTO\n\nexport FULLLIB=/usr/local/lib/libopencv_ocl.2.4.dylib\nexport DYL=libopencv_ocl.2.4.dylib\ncp -f \"$FULLLIB\" \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks\"\ninstall_name_tool -change $FULLLIB @loader_path/../Frameworks/$DYL \"$DYL_PHOTO\"\ninstall_name_tool -change /usr/local/opt/opencv/lib/$DYL @loader_path/../Frameworks/$DYL \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/MacOS/$PRODUCT_NAME\"\nexport DYL_OCL=\"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks/$DYL\"\nchmod +wx $DYL_OCL\n\nexport FULLLIB=/usr/local/opt/opencv/lib/libopencv_ml.2.4.dylib\nexport DYL=libopencv_ml.2.4.dylib\ncp -f \"$FULLLIB\" \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks\"\ninstall_name_tool -change /usr/local/opt/opencv/lib/$DYL @loader_path/../Frameworks/$DYL \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/MacOS/$PRODUCT_NAME\"\nexport DYL_ML=\"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks/$DYL\"\nchmod +wx $DYL_ML\n\nexport FULLLIB=/usr/local/opt/opencv/lib/libopencv_stitching.2.4.dylib\nexport DYL=libopencv_stitching.2.4.dylib\ncp -f \"$FULLLIB\" \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks\"\ninstall_name_tool -change $FULLLIB @loader_path/../Frameworks/$DYL \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/MacOS/$PRODUCT_NAME\"\nexport DYL_STITCHING=\"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks/$DYL\"\nchmod +wx $DYL_STITCHING\n\nexport FULLLIB=/usr/local/opt/opencv/lib/libopencv_superres.2.4.dylib\nexport DYL=libopencv_superres.2.4.dylib\ncp -f \"$FULLLIB\" \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks\"\ninstall_name_tool -change $FULLLIB @loader_path/../Frameworks/$DYL \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/MacOS/$PRODUCT_NAME\"\nexport DYL_SUPERRES=\"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks/$DYL\"\nchmod +wx $DYL_SUPERRES\n\n\nexport FULLLIB=/usr/local/opt/opencv/lib/libopencv_video.2.4.dylib\nexport DYL=libopencv_video.2.4.dylib\ncp -f \"$FULLLIB\" \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks\"\ninstall_name_tool -change $FULLLIB @loader_path/../Frameworks/$DYL \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/MacOS/$PRODUCT_NAME\"\nexport DYL_VIDEO=\"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks/$DYL\"\nchmod +wx $DYL_VIDEO\n\nexport FULLLIB=/usr/local/opt/opencv/lib/libopencv_videostab.2.4.dylib\nexport DYL=libopencv_videostab.2.4.dylib\ncp -f \"$FULLLIB\" \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks\"\ninstall_name_tool -change $FULLLIB @loader_path/../Frameworks/$DYL \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/MacOS/$PRODUCT_NAME\"\nexport DYL_VIDEOSTAB=\"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks/$DYL\"\nchmod +wx $DYL_VIDEOSTAB\n\nexport FULLLIB=/usr/local/opt/opencv/lib/libopencv_objdetect.2.4.dylib\nexport DYL=libopencv_objdetect.2.4.dylib\ncp -f \"$FULLLIB\" \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks\"\ninstall_name_tool -change $FULLLIB @loader_path/../Frameworks/$DYL \"$DYL_PHOTO\"\ninstall_name_tool -change $FULLLIB @loader_path/../Frameworks/$DYL \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/MacOS/$PRODUCT_NAME\"\nexport DYL_OBJDETECT=\"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks/$DYL\"\nchmod +wx $DYL_OBJDETECT\n\n\nexport DYLIB=libopencv_calib3d.2.4.13.dylib\nexport DYL=libopencv_calib3d.2.4.dylib\ncp -f \"/usr/local/lib/$DYLIB\" \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks\"\ncp \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks/$DYLIB\" \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks/$DYL\"\ninstall_name_tool -change /usr/local/opt/opencv/lib/$DYL @loader_path/../Frameworks/$DYL \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/MacOS/$PRODUCT_NAME\"\ninstall_name_tool -change /usr/local/opt/opencv/lib/$DYL @loader_path/../Frameworks/$DYL \"$DYL_OCL\"\nchmod +wx \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks/$DYL\"\n\nexport DYL_CALIB=\"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks/$DYL\"\n\n\nexport FULLLIB=/usr/local/lib/libopencv_features2d.2.4.dylib\nexport DYL=libopencv_features2d.2.4.dylib\ncp -f \"$FULLLIB\" \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks\"\ninstall_name_tool -change $FULLLIB @loader_path/../Frameworks/$DYL \"$DYL_CALIB\"\ninstall_name_tool -change /usr/local/opt/opencv/lib/$DYL @loader_path/../Frameworks/$DYL \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/MacOS/$PRODUCT_NAME\"\nexport DYL_FEATURE2D=\"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks/$DYL\"\nchmod +wx \"$DYL_FEATURE2D\"\n\nexport FULLLIB=/usr/local/lib/libopencv_flann.2.4.dylib\nexport DYL=libopencv_flann.2.4.dylib\ncp -f \"$FULLLIB\" \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks\"\ninstall_name_tool -change $FULLLIB @loader_path/../Frameworks/$DYL \"$DYL_FEATURE2D\"\ninstall_name_tool -change /usr/local/opt/opencv/lib/$DYL @loader_path/../Frameworks/$DYL \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/MacOS/$PRODUCT_NAME\"\nexport DYL_FLANN=\"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks/$DYL\"\nchmod +wx $DYL_FLANN\n\n\nexport DYLIB=libopencv_core.2.4.13.dylib\nexport DYL=libopencv_core.2.4.dylib\ncp -f \"/usr/local/lib/$DYLIB\" \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks\"\ncp \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks/$DYLIB\" \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks/$DYL\"\ninstall_name_tool -change /usr/local/opt/opencv/lib/$DYL @loader_path/../Frameworks/$DYL \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/MacOS/$PRODUCT_NAME\"\nchmod +wx \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks/$DYL\"\n\nexport DYL_CORE=\"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks/$DYL\"\n\nexport DYLIB=libopencv_imgproc.2.4.13.dylib\nexport DYL=libopencv_imgproc.2.4.dylib\ncp -f \"/usr/local/lib/$DYLIB\" \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks\"\ncp \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks/$DYLIB\" \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks/$DYL\"\ninstall_name_tool -change /usr/local/opt/opencv/lib/$DYL @loader_path/../Frameworks/$DYL \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/MacOS/$PRODUCT_NAME\"\nchmod +wx \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks/$DYL\"\n\nexport DYL_IMGPROC=\"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks/$DYL\"\n\nexport DYLIB=libopencv_highgui.2.4.13.dylib\nexport DYL=libopencv_highgui.2.4.dylib\ncp -f \"/usr/local/lib/$DYLIB\" \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks\"\ncp \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks/$DYLIB\" \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks/$DYL\"\ninstall_name_tool -change /usr/local/opt/opencv/lib/$DYL @loader_path/../Frameworks/$DYL \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/MacOS/$PRODUCT_NAME\"\ninstall_name_tool -change /usr/local/opt/opencv/lib/$DYL @loader_path/../Frameworks/$DYL \"$DYL_FLANN\"\nchmod +wx \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks/$DYL\"\n\nexport DYL_HIGHGUI=\"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks/$DYL\"\n\nexport FULLLIB=/usr/local/opt/libpng/lib/libpng16.16.dylib\nexport DYL=libpng16.16.dylib\ncp -f \"$FULLLIB\" \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks\"\ninstall_name_tool -change $FULLLIB @loader_path/../Frameworks/$DYL \"$DYL_HIGHGUI\"\n\nexport FULLLIB=/usr/local/opt/libtiff/lib/libtiff.5.dylib\nexport DYL=libtiff.5.dylib\ncp -f \"$FULLLIB\" \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks\"\nchmod +wx \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks/$DYL\"\ninstall_name_tool -change $FULLLIB @loader_path/../Frameworks/$DYL \"$DYL_HIGHGUI\"\nexport DYL_LIBTIFF=\"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks/$DYL\"\n\nexport FULLLIB=/usr/local/opt/openexr/lib/libIlmImf-2_2.22.dylib\nexport DYL=libIlmImf-2_2.22.dylib\ncp -f \"$FULLLIB\" \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks\"\ninstall_name_tool -change $FULLLIB @loader_path/../Frameworks/$DYL \"$DYL_HIGHGUI\"\nexport DYL_LIBILMIMF=\"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks/$DYL\"\nchmod +wx $DYL_LIBILMIMF\n\nexport FULLLIB=/usr/local/opt/ilmbase/lib/libIlmThread-2_2.12.dylib\nexport DYL=libIlmThread-2_2.12.dylib\ncp -f \"$FULLLIB\" \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks\"\ninstall_name_tool -change $FULLLIB @loader_path/../Frameworks/$DYL \"$DYL_HIGHGUI\"\ninstall_name_tool -change $FULLLIB @loader_path/../Frameworks/$DYL \"$DYL_LIBILMIMF\"\nexport DYL_LIBILMTHREAD=\"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks/$DYL\"\nchmod +wx $DYL_LIBILMTHREAD\n\nexport FULLLIB=/usr/local/opt/ilmbase/lib/libImath-2_2.12.dylib\nexport DYL=libImath-2_2.12.dylib\ncp -f \"$FULLLIB\" \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks\"\nexport DYL_LIBIMATH=\"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks/$DYL\"\nchmod +wx $DYL_LIBIMATH\ninstall_name_tool -change $FULLLIB @loader_path/../Frameworks/$DYL \"$DYL_HIGHGUI\"\ninstall_name_tool -change $FULLLIB @loader_path/../Frameworks/$DYL \"$DYL_LIBILMIMF\"\n\nexport DYL=libIexMath-2_2.12.dylib\nexport FULLLIB=/usr/local/opt/ilmbase/lib/$DYL\ncp -f $FULLLIB \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks\"\ninstall_name_tool -change $FULLLIB @loader_path/../Frameworks/$DYL \"$DYL_LIBILMIMF\"\nexport DYL_LIBIEXMATH=\"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks/$DYL\"\nchmod +wx $DYL_LIBIEXMATH\n\nexport DYL=libIex-2_2.12.dylib\nexport FULLLIB=/usr/local/opt/ilmbase/lib/$DYL\ncp -f $FULLLIB \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks\"\ninstall_name_tool -change $FULLLIB @loader_path/../Frameworks/$DYL \"$DYL_HIGHGUI\"\ninstall_name_tool -change $FULLLIB @loader_path/../Frameworks/$DYL \"$DYL_LIBILMTHREAD\"\ninstall_name_tool -change $FULLLIB @loader_path/../Frameworks/$DYL \"$DYL_LIBILMIMF\"\ninstall_name_tool -change /usr/local/Cellar/ilmbase/2.2.0/lib/libIex-2_2.12.dylib @loader_path/../Frameworks/$DYL \"$DYL_LIBIMATH\"\ninstall_name_tool -change /usr/local/Cellar/ilmbase/2.2.0/lib/libIex-2_2.12.dylib @loader_path/../Frameworks/$DYL \"$DYL_LIBIEXMATH\"\ninstall_name_tool -change /usr/local/Cellar/ilmbase/2.2.0/lib/libIex-2_2.12.dylib @loader_path/../Frameworks/$DYL \"$DYL_LIBILMTHREAD\"\n\nexport FULLLIB=/usr/local/opt/jpeg/lib/libjpeg.8.dylib\nexport DYL=libjpeg.8.dylib\ncp -f \"$FULLLIB\" \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks\"\ninstall_name_tool -change $FULLLIB @loader_path/../Frameworks/$DYL \"$DYL_HIGHGUI\"\ninstall_name_tool -change $FULLLIB @loader_path/../Frameworks/$DYL \"$DYL_LIBTIFF\"\n\nexport DYL=libz.1.dylib\nexport FULLLIB=/usr/lib/$DYL\ncp -f \"/usr/lib/$DYL\" \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks\"\ninstall_name_tool -change $FULLLIB @loader_path/../Frameworks/$DYL \"$DYL_HIGHGUI\"\ninstall_name_tool -change $FULLLIB @loader_path/../Frameworks/$DYL \"$DYL_CORE\"\n\n\nexport FULLLIB=/usr/local/opt/ilmbase/lib/libHalf.12.dylib\nexport DYL=libHalf.12.dylib\ncp -f \"$FULLLIB\" \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks\"\ninstall_name_tool -change $FULLLIB @loader_path/../Frameworks/$DYL \"$DYL_HIGHGUI\"\ninstall_name_tool -change $FULLLIB @loader_path/../Frameworks/$DYL \"$DYL_LIBILMIMF\"\n\nexport FULLLIB=/usr/lib/libobjc.A.dylib\nexport DYL=libobjc.A.dylib\ncp -f \"$FULLLIB\" \"$TARGET_BUILD_DIR/$TARGET_NAME.app/Contents/Frameworks\"\ninstall_name_tool -change $FULLLIB @loader_path/../Frameworks/$DYL \"$DYL_HIGHGUI\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		93294A491DAC9269001C8923 /* Sources */ = {
@@ -383,7 +420,8 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Softimage/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.xudesheng.Softimage;
+				"OTHER_CODE_SIGN_FLAGS[sdk=*]" = "--deep";
+				PRODUCT_BUNDLE_IDENTIFIER = yifan.softImage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Softimage/Softimage-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -399,7 +437,8 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Softimage/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.xudesheng.Softimage;
+				"OTHER_CODE_SIGN_FLAGS[sdk=*]" = "--deep";
+				PRODUCT_BUNDLE_IDENTIFIER = yifan.softImage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Softimage/Softimage-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
@@ -455,6 +494,7 @@
 				93294A691DAC9269001C8923 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		93294A6A1DAC9269001C8923 /* Build configuration list for PBXNativeTarget "SoftimageTests" */ = {
 			isa = XCConfigurationList;
@@ -463,6 +503,7 @@
 				93294A6C1DAC9269001C8923 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

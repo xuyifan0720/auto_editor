@@ -8,7 +8,14 @@
 
 import Cocoa
 
-
+extension NSImage {
+    var imageJPGRepresentation: NSData {
+        return NSBitmapImageRep(data: tiffRepresentation!)!.representation(using: NSBitmapImageFileType.JPEG, properties: [:])! as NSData
+    }
+    func saveJPG(path:String) -> Bool {
+        return imageJPGRepresentation.write(toFile: path, atomically: true)
+    }
+}
 
 class ViewController: NSViewController {
 
@@ -148,7 +155,7 @@ class ViewController: NSViewController {
                 while (self.picList.count != 0 && self.picList[0] != nil)
                 {
                     let file = self.picList[0]!
-                    NSLog(self.source.stringValue+"/"+file)
+                    //NSLog(self.source.stringValue+"/"+file)
                     let image = NSImage(contentsOfFile:self.source.stringValue+"/"+file)
                     main.async
                         {
@@ -157,21 +164,27 @@ class ViewController: NSViewController {
                     let brightvalue = Int(self.brightness.stringValue)!
                     let processed = OpenCV.adjust(image, brightness: Int32(brightvalue), blemish: self.blemish.state == 1)
                     main.async
-                        {
+                    {
                             self.after.image = processed
                     }
+                    if !processed!.saveJPG(path: self.target.stringValue + "/Updated_" + file)
+                    {
+                        NSLog("failed saving")
+                    }
+                    /*
                     if let bits = processed?.representations.first as? NSBitmapImageRep
                     {
                         let data = bits.representation(using: .JPEG, properties: [:])
                         let updatedPath = self.target.stringValue + "/Updated_" + file
-                        NSLog(updatedPath)
-                        let url = NSURL(string: updatedPath)
-                        NSLog("\(url)")
+                       // NSLog(updatedPath)
+                        let url = URL(string: updatedPath)
+                        NSLog("\(url!)")
                         do
                         {
-                            try data?.write(to: url as! URL)
+                            //try data?.write(to: url as! URL)
+                            try data!.write(to: url!)
                         }catch{print("error saving")}
-                    }
+                    }*/
                     self.picList.remove(at:0)
                 }
             }

@@ -75,6 +75,27 @@ class ViewController: NSViewController {
         // Make sure that a path was chosen
         if (path != nil)
         {
+            source.stringValue="\(path!)"
+            if isFolderWithPictureSafe(path!)
+            {
+                picList = [String]()
+                startButton.isEnabled=true
+                exitButton.isEnabled=false
+                do
+                {
+                    let fileManager = FileManager.default
+                    picList = try fileManager.contentsOfDirectory(atPath: path!)
+                    picList = picList.filter{isPictureSafe($0)}
+                }
+                catch{print("file error")}
+            }
+            else
+            {
+                startButton.isEnabled=false
+                exitButton.isEnabled=false
+            }
+
+            /*
             let fileManager = FileManager.default
             var isDir : ObjCBool = false
             if fileManager.fileExists(atPath: path!, isDirectory:&isDir)
@@ -104,8 +125,8 @@ class ViewController: NSViewController {
                     source.stringValue="\(path!)"
                     if isPictureSafe(path!)
                     {
-                        picList = [String]()
-                        startButton.isEnabled=true
+                        // picList = [String]()
+                        startButton.isEnabled=false
                         exitButton.isEnabled=false
                         picList.append(path!)
                     }
@@ -120,7 +141,7 @@ class ViewController: NSViewController {
             {
                 startButton.isEnabled=false
                 exitButton.isEnabled=false
-            }
+            }*/
         }
     }
     @IBOutlet weak var startButton: NSButton!
@@ -143,51 +164,79 @@ class ViewController: NSViewController {
         }
     }
     
+    func popUpWarning(message msgText:String, information informativeText:String){
+        let myPopup: NSAlert = NSAlert()
+        myPopup.messageText = msgText
+        myPopup.informativeText = informativeText
+        myPopup.alertStyle = NSAlertStyle.warning
+        myPopup.addButton(withTitle: "OK")
+        myPopup.runModal()
+    }
+
+    func verifyBrightness()->Int{
+        let brightString = self.brightness.stringValue.trimmingCharacters(in: .whitespacesAndNewlines)
+        if brightString != ""{
+            if let brightvalue = Int(brightString){
+                return brightvalue
+            }else{
+                return -1
+            }
+            
+        }else{
+            return -1
+        }
+        
+    }
+    
 
     @IBAction func process(_ sender: NSButton)
     {
         exitButton.isEnabled = true
         startButton.isEnabled = false
-            let queue = DispatchQueue.global()
-            let main = DispatchQueue.main
-            queue.async
+        let brightvalue = verifyBrightness()
+        if brightvalue == -1{
+            popUpWarning(message: "Brightness may have wrong value", information: "Brightness should be integer value!")
+            return
+        }
+        let queue = DispatchQueue.global()
+        let main = DispatchQueue.main
+        queue.async
+        {
+            while (self.picList.count != 0 && self.picList[0] != nil)
             {
-                while (self.picList.count != 0 && self.picList[0] != nil)
-                {
-                    let file = self.picList[0]!
-                    //NSLog(self.source.stringValue+"/"+file)
-                    let image = NSImage(contentsOfFile:self.source.stringValue+"/"+file)
-                    main.async
-                        {
-                            self.before.image = image
-                    }
-                    let brightvalue = Int(self.brightness.stringValue)!
-                    let processed = OpenCV.adjust(image, brightness: Int32(brightvalue), blemish: self.blemish.state == 1)
-                    main.async
+                let file = self.picList[0]!
+                //NSLog(self.source.stringValue+"/"+file)
+                let image = NSImage(contentsOfFile:self.source.stringValue+"/"+file)
+                main.async
                     {
-                            self.after.image = processed
-                    }
-                    if !processed!.saveJPG(path: self.target.stringValue + "/Updated_" + file)
-                    {
-                        NSLog("failed saving")
-                    }
-                    /*
-                    if let bits = processed?.representations.first as? NSBitmapImageRep
-                    {
-                        let data = bits.representation(using: .JPEG, properties: [:])
-                        let updatedPath = self.target.stringValue + "/Updated_" + file
-                       // NSLog(updatedPath)
-                        let url = URL(string: updatedPath)
-                        NSLog("\(url!)")
-                        do
-                        {
-                            //try data?.write(to: url as! URL)
-                            try data!.write(to: url!)
-                        }catch{print("error saving")}
-                    }*/
-                    self.picList.remove(at:0)
+                        self.before.image = image
                 }
+                let processed = OpenCV.adjust(image, brightness: Int32(brightvalue), blemish: self.blemish.state == 1)
+                main.async
+                {
+                        self.after.image = processed
+                }
+                if !processed!.saveJPG(path: self.target.stringValue + "/Updated_" + file)
+                {
+                    NSLog("failed saving")
+                }
+                /*
+                if let bits = processed?.representations.first as? NSBitmapImageRep
+                {
+                    let data = bits.representation(using: .JPEG, properties: [:])
+                    let updatedPath = self.target.stringValue + "/Updated_" + file
+                   // NSLog(updatedPath)
+                    let url = URL(string: updatedPath)
+                    NSLog("\(url!)")
+                    do
+                    {
+                        //try data?.write(to: url as! URL)
+                        try data!.write(to: url!)
+                    }catch{print("error saving")}
+                }*/
+                self.picList.remove(at:0)
             }
+        }
     }
     
     
@@ -208,6 +257,7 @@ class ViewController: NSViewController {
         }
         before.image = nil
         after.image = nil
+        source.stringValue = ""
     }
     
     func isFolderWithPictureUnsafe(_ atPath:String)->Bool
@@ -234,7 +284,7 @@ class ViewController: NSViewController {
             let filelist = try fileManager.contentsOfDirectory(atPath: atPath)
             for filename in filelist
             {
-                if !isPictureSafe(filename)
+                if isPictureSafe(filename)
                 {
                     return true
                 }
@@ -247,7 +297,7 @@ class ViewController: NSViewController {
     {
         //atPath has been confirmed is a file.
         //so, it doesn't need to check exists or not again.
-        if atPath.hasSuffix("jpg") || atPath.hasSuffix("JPG") || atPath.hasSuffix("JPEG")||atPath.hasSuffix("jpeg")
+        if atPath.hasSuffix("jpg") || atPath.hasSuffix("JPG") || atPath.hasSuffix("JPEG") || atPath.hasSuffix("jpeg")
         {
             return true
         }

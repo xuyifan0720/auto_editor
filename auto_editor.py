@@ -142,7 +142,7 @@ class PhotoEditor:
                         self.adjust()
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description='Arguments for UDI Transfer')
+    parser = argparse.ArgumentParser(description='Arguments for auto editor')
     parser.add_argument('-s', action="store", dest="storage", required=True,
                         help="path where you store your source pictures.")
     parser.add_argument('-d', action="store", dest="destination", required=True,

@@ -1,7 +1,7 @@
 //
 //  OpenCV.m
-//  OpenCVSample_OSX
-//
+//  Credit of original sample belongs to OpenCVSample_OSX
+//  Add more function based on my project needs.
 //
 //  
 //
